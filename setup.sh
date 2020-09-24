@@ -32,6 +32,7 @@ function setup_neovim
     # Install vim-plug. (see: https://github.com/junegunn/vim-plug)
     sh -c 'curl -fLo "${XDG_DATA_HOME:-$HOME/.local/share}"/nvim/site/autoload/plug.vim \
         --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'
+    [ -d ${HOME}/.config/nvim ] || mkdir -p ${HOME}/.config/nvim
     cp "${PWD}/dotfiles/init.vim" ${HOME}/.config/nvim/init.vim
     nvim --headless +PlugInstall +qa
 }
@@ -39,7 +40,7 @@ function setup_neovim
 function setup_emacs
 {
     sudo apt-get install -yq emacs
-    [ -d ${HOME}/.emacs.d ] && rm -rf {$HOME}/.emacs.d
+    [ -d ${HOME}/.emacs.d ] && rm -rf ${HOME}/.emacs.d
     git clone -q https://github.com/syl20bnr/spacemacs ${HOME}/.emacs.d
     systemctl --user enable emacs # Launch emacs server automatically.
 }
