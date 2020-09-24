@@ -12,7 +12,7 @@ function setup_packages
     sudo apt-get install -yq wget
 }
 
-function setup_input_method
+function setup_fcitx
 {
     sudo apt-get install -yq fcitx-hangul
     im-config -n fcitx
@@ -72,7 +72,7 @@ function main
     #sudo apt-get upgrade -yq
 
     setup_packages
-    setup_input_method
+    setup_fcitx
     setup_zsh
     setup_neovim
     setup_tmux
