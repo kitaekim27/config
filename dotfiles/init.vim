@@ -36,7 +36,7 @@ noremap <leader>b :Buffers<CR>
 
 nnoremap <silent> <M-h> :TmuxNavigateLeft<CR>
 nnoremap <silent> <M-l> :TmuxNavigateRight<CR>
-nnoremap <silent> <M-j> :TmuxNavigateUp<CR>
+nnoremap <silent> <M-k> :TmuxNavigateUp<CR>
 nnoremap <silent> <M-j> :TmuxNavigateDown<CR>
 
 " Searching configuration.
