@@ -104,3 +104,14 @@ autocmd Filetype html,css setlocal
 	\ shiftwidth=2
 	\ expandtab
 	\ smartindent
+
+" Project specific coding style configurations.
+" GNU coding style.
+autocmd BufRead,BufNewFile ~/gnu/** setlocal
+	\ tabstop=2
+	\ softtabstop=2
+	\ shiftwidth=2
+	\ expandtab
+	\ cinoptions=>4,n-2,{2,^-2,:2,=2,g0,h2,p5,t0,+2,(0,u0,w1,m1
+	\ cindent
+	\ textwidth=79
