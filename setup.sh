@@ -10,6 +10,7 @@ function setup_packages
     sudo apt-get install -yq git
     sudo apt-get install -yq net-tools
     sudo apt-get install -yq wget
+    sudo apt-get install -yq bear
 }
 
 function setup_fcitx
