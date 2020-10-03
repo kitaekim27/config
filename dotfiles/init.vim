@@ -108,7 +108,7 @@ autocmd Filetype html,css setlocal
 
 " Project specific coding style configurations.
 " GNU coding style.
-autocmd BufRead,BufNewFile ~/gnu/** setlocal
+autocmd BufRead,BufNewFile ~/Desktop/gnu/** setlocal
 	\ tabstop=2
 	\ softtabstop=2
 	\ shiftwidth=2
