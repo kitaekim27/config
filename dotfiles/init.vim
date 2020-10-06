@@ -79,7 +79,7 @@ autocmd Filetype sh setlocal
 	\ tabstop=2
 	\ softtabstop=2
 	\ shiftwidth=2
-	\ expandtab
+	\ noexpandtab
 	\ smartindent
 autocmd Filetype asm,c,make setlocal
 	\ tabstop=8
