@@ -59,6 +59,7 @@ function setup_gef
 	pip3 -q install unicorn
 	pip3 -q install capstone
 	pip3 -q install ropper
+	pip3 -q install keystone
 }
 
 function setup_lxd
