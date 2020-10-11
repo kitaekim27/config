@@ -4,13 +4,7 @@ set -euo pipefail
 
 function setup_packages
 {
-	sudo apt-get install -yq build-essential
-	sudo apt-get install -yq curl
-	sudo apt-get install -yq gdb
-	sudo apt-get install -yq git
-	sudo apt-get install -yq net-tools
-	sudo apt-get install -yq wget
-	sudo apt-get install -yq bear
+	sudo apt-get install -yq build-essential curl wget gdb git net-tools bear
 }
 
 function setup_fcitx
@@ -25,6 +19,13 @@ function setup_zsh
 	sudo chsh -s /usr/bin/zsh ${USER}
 	curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh | zsh
 	cp ${PWD}/dotfiles/zshrc ${HOME}/.zshrc
+}
+
+function setup_nvm
+{
+	wget -qO- https://raw.githubusercontent.com/nvm-sh/nvm/v0.36.0/install.sh | zsh
+	source ~/.zshrc
+	nvm install node
 }
 
 function setup_neovim
@@ -70,13 +71,15 @@ function setup_lxd
 
 function main
 {
-	sudo apt-get update -yq
+	#sudo apt-get update -yq
 	#sudo apt-get upgrade -yq
 
 	setup_packages
 	setup_fcitx
 	setup_zsh
+	setup_nvm
 	setup_neovim
+	#setup_emacs
 	setup_tmux
 	setup_gef
 	setup_lxd
