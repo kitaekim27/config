@@ -67,6 +67,9 @@ function setup_lxd
 {
 	sudo apt-get install -yq lxd
 	sudo usermod -aG lxd ${USER}
+
+	# Install scripts for LXD.
+	install ${PWD}/scripts/lxd/* ${HOME}/.local/bin/
 }
 
 function main

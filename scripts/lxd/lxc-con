@@ -1,0 +1,4 @@
+#!/bin/sh
+
+# Connect to shell of given instance of LXC container.
+lxc exec ${1} -- sudo -iu ${2:-ubuntu}
