@@ -24,8 +24,8 @@ function setup_zsh
 function setup_nvm
 {
 	wget -qO- https://raw.githubusercontent.com/nvm-sh/nvm/v0.36.0/install.sh | zsh
-	source ~/.zshrc
-	nvm install node
+	. ~/.zshrc
+	[ command -v nvm ] && nvm install node
 }
 
 function setup_neovim
@@ -71,15 +71,15 @@ function setup_lxd
 
 function main
 {
-	#sudo apt-get update -yq
-	#sudo apt-get upgrade -yq
+	sudo apt-get update -yq
+	sudo apt-get upgrade -yq
 
 	setup_packages
 	setup_fcitx
 	setup_zsh
 	setup_nvm
 	setup_neovim
-	#setup_emacs
+	# setup_emacs
 	setup_tmux
 	setup_gef
 	setup_lxd
