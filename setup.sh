@@ -87,7 +87,6 @@ sudo apt-get upgrade -yq
 setup_basic_tools
 setup_fcitx_hangul
 setup_zsh
-setup_nvm
 setup_neovim
 setup_tmux
 setup_gef
