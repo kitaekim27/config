@@ -75,6 +75,7 @@ setup_lxd()
 {
 	sudo apt-get install -yq lxd
 	sudo usermod -aG lxd ${USER}
+	yes '' | lxd init # Initialize LXD with default configurations.
 
 	# Install scripts for LXD.
 	install ${PWD}/scripts/lxd/* ${HOME}/.local/bin/
