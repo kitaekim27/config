@@ -66,7 +66,7 @@ setup_gef()
 {
 	# Extended GDB.
 	# Check [https://github.com/hugsy/gef] for detailed description.
-	wget -q -O- https://github.com/hugsy/gef/raw/master/scripts/gef.sh
+	sh -c "$(wget -q -O - http://gef.blah.cat/sh)"
 	command -v pip3 &> /dev/null || sudo apt-get install -yq python3-pip
 	pip3 -q install unicorn capstone ropper keystone
 }
