@@ -81,10 +81,22 @@ autocmd Filetype sh setlocal
 	\ shiftwidth=2
 	\ noexpandtab
 	\ smartindent
-autocmd Filetype asm,c,make setlocal
+autocmd Filetype asm setlocal
+	\ tabstop=2
+	\ softtabstop=2
+	\ shiftwidth=2
+	\ noexpandtab
+	\ cindent
+autocmd Filetype c setlocal
 	\ tabstop=8
 	\ softtabstop=8
 	\ shiftwidth=8
+	\ noexpandtab
+	\ cindent
+autocmd Filetype make setlocal
+	\ tabstop=4
+	\ softtabstop=4
+	\ shiftwidth=4
 	\ noexpandtab
 	\ cindent
 autocmd Filetype cpp setlocal
@@ -103,6 +115,12 @@ autocmd Filetype html,css setlocal
 	\ tabstop=2
 	\ softtabstop=2
 	\ shiftwidth=2
+	\ expandtab
+	\ smartindent
+autocmd Filetype java setlocal
+	\ tabstop=4
+	\ softtabstop=4
+	\ shiftwidth=4
 	\ expandtab
 	\ smartindent
 
