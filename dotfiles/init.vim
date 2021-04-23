@@ -88,17 +88,17 @@ autocmd Filetype asm setlocal
 	\ noexpandtab
 	\ cindent
 autocmd Filetype c setlocal
-	\ tabstop=8
-	\ softtabstop=8
-	\ shiftwidth=8
-	\ noexpandtab
+	\ tabstop=4
+	\ softtabstop=4
+	\ shiftwidth=4
+	\ expandtab
 	\ cindent
 autocmd Filetype make setlocal
 	\ tabstop=4
 	\ softtabstop=4
 	\ shiftwidth=4
 	\ noexpandtab
-	\ cindent
+	\ smartindent
 autocmd Filetype cpp setlocal
 	\ tabstop=4
 	\ softtabstop=4
@@ -122,9 +122,8 @@ autocmd Filetype java setlocal
 	\ softtabstop=4
 	\ shiftwidth=4
 	\ expandtab
-	\ smartindent
+	\ cindent
 
-" Project specific coding style configurations.
 " GNU coding style.
 autocmd BufRead,BufNewFile ~/Desktop/gnu/** setlocal
 	\ tabstop=2
@@ -134,6 +133,14 @@ autocmd BufRead,BufNewFile ~/Desktop/gnu/** setlocal
 	\ cinoptions=>4,n-2,{2,^-2,:2,=2,g0,h2,p5,t0,+2,(0,u0,w1,m1
 	\ cindent
 	\ textwidth=79
+
+" Linux coding style.
+autocmd BufRead,BufNewFile ~/Desktop/gnu/** setlocal
+	\ tabstop=8
+	\ softtabstop=8
+	\ shiftwidth=8
+	\ noexpandtab
+	\ cindent
 
 "" Configurations for coc.nvim plugin.
 "" See: https://github.com/neoclide/coc.nvim
