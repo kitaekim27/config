@@ -1,4 +1,6 @@
-#!/bin/sh -eu
+#!/bin/sh
+
+set -eu
 
 setup_basic_tools()
 {
