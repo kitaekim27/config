@@ -123,6 +123,12 @@ autocmd Filetype java setlocal
 	\ shiftwidth=4
 	\ expandtab
 	\ cindent
+autocmd Filetype xml setlocal
+	\ tabstop=2
+	\ softtabstop=2
+	\ shiftwidth=2
+	\ noexpandtab
+	\ smartindent
 
 " GNU coding style.
 autocmd BufRead,BufNewFile ~/Desktop/gnu/** setlocal
