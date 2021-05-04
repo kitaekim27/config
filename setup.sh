@@ -4,7 +4,8 @@ set -eu
 
 setup_basic_tools()
 {
-	sudo apt-get install -yq build-essential curl wget gdb git net-tools bear
+	sudo apt-get install -yq build-essential curl wget gdb git net-tools bear \
+		clang clangd
 }
 
 setup_fcitx_hangul()
