@@ -11,7 +11,7 @@ setup_basic_tools()
 setup_fcitx_hangul()
 {
 	sudo apt-get install -yq fcitx-hangul
-	im-config -n fcitx # Set default input method.
+	im-config -n fcitx # Set fcitx a default input method.
 }
 
 setup_zsh()
@@ -37,7 +37,7 @@ setup_nvm()
 
 setup_neovim()
 {
-	# Fork of good old vim.
+	# Fork of the good old vim.
 	# Check [https://github.com/neovim/neovim] for detailed description.
 	sudo apt-get install -yq neovim
 
@@ -45,6 +45,7 @@ setup_neovim()
 	curl -fLo "${XDG_DATA_HOME:-$HOME/.local/share}"/nvim/site/autoload/plug.vim \
 		--create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 	install -D "${PWD}/dotfiles/init.vim" ${HOME}/.config/nvim/init.vim
+	install -D "${PWD}/dotfiles/neovim-plugins/coc-configuration.vim" ${HOME}/.local/share/nvim/site/
 	nvim --headless +PlugInstall +qa
 }
 
@@ -70,7 +71,7 @@ setup_gef()
 	# Extended GDB.
 	# Check [https://github.com/hugsy/gef] for detailed description.
 	sh -c "$(wget -q -O - http://gef.blah.cat/sh)"
-	command -v pip3 &> /dev/null || sudo apt-get install -yq python3-pip
+	(command -v pip3 &> /dev/null) || sudo apt-get install -yq python3-pip
 	pip3 -q install unicorn capstone ropper keystone
 }
 
