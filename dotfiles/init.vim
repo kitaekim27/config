@@ -1,14 +1,18 @@
+let g:airline_powerline_fonts = 1
+let g:airline_theme='minimalist'
 let g:tmux_navigator_no_mappings = 1 " Change tmux navigator's keys manually.
 
 call plug#begin(stdpath('data') . '/plugged')
 Plug 'Yggdroot/indentLine'
 Plug 'bronson/vim-trailing-whitespace'
 Plug 'christoomey/vim-tmux-navigator'
+Plug 'edkolev/tmuxline.vim'
 Plug 'jiangmiao/auto-pairs'
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'vim-airline/vim-airline'
+Plug 'vim-airline/vim-airline-themes'
 call plug#end()
 
 nnoremap <Space> <NOP>
