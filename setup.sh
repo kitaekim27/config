@@ -1,11 +1,11 @@
-#!/bin/sh
+#!/bin/bash
 
 set -eu
 
 setup_basic_tools()
 {
-	sudo apt-get install -yq build-essential curl wget gdb git net-tools bear \
-		clang clangd
+	sudo apt-get install -yq build-essential curl wget gdb git net-tools bear clang clangd \
+		python-is-python3 python3-pip
 }
 
 setup_fcitx_hangul()
@@ -30,7 +30,7 @@ setup_nvm()
 {
 	# Node Version Manager.
 	# Check [https://github.com/nvm-sh/nvm] for detailed description.
-	wget -qO- https://raw.githubusercontent.com/nvm-sh/nvm/v0.36.0/install.sh | zsh
+	wget -qO- https://raw.githubusercontent.com/nvm-sh/nvm/v0.38.0/install.sh | zsh
 	source ~/.zshrc # TOOD: This command freqeuntly fails due to unexpected newline error.
 	[ command -v nvm ] && nvm install node
 }
@@ -45,8 +45,8 @@ setup_neovim()
 	curl -fLo "${XDG_DATA_HOME:-$HOME/.local/share}"/nvim/site/autoload/plug.vim \
 		--create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 	install -D "${PWD}/dotfiles/init.vim" ${HOME}/.config/nvim/init.vim
-	install -D "${PWD}/dotfiles/neovim-plugins/coc-configuration.vim" ${HOME}/.local/share/nvim/site/
 	nvim --headless +PlugInstall +qa
+	cat ${PWD}/dotfiles/coc-config.vim >> ${HOME}/.config/nvim/init.vim
 }
 
 setup_emacs()
@@ -70,18 +70,15 @@ setup_gef()
 {
 	# Extended GDB.
 	# Check [https://github.com/hugsy/gef] for detailed description.
-	sh -c "$(wget -q -O - http://gef.blah.cat/sh)"
-	(command -v pip3 &> /dev/null) || sudo apt-get install -yq python3-pip
-	pip3 -q install unicorn capstone ropper keystone
+	wget -qO- https://github.com/hugsy/gef/raw/master/scripts/gef.sh | zsh
+	pip -q install capstone unicorn keystone-engine ropper
 }
 
 setup_lxd()
 {
 	sudo apt-get install -yq lxd
 	sudo usermod -aG lxd ${USER}
-	yes '' | lxd init # Initialize LXD with default configurations.
-
-	# Install scripts for LXD.
+	yes '' | lxd init # Initialize the LXD with default configurations.
 	install ${PWD}/scripts/lxd/* ${HOME}/.local/bin/
 }
 
@@ -91,6 +88,7 @@ sudo apt-get upgrade -yq
 setup_basic_tools
 setup_fcitx_hangul
 setup_zsh
+setup_nvm
 setup_neovim
 setup_tmux
 setup_gef
