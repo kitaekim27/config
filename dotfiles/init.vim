@@ -19,10 +19,14 @@ call plug#end()
 nnoremap <Space> <NOP>
 let mapleader = ' '
 
-map <Up>    <NOP>
-map <Down>  <NOP>
-map <Left>  <NOP>
-map <Right> <NOP>
+nmap <Up>    <NOP>
+imap <Up>    <NOP>
+nmap <Down>  <NOP>
+imap <Down>  <NOP>
+nmap <Left>  <NOP>
+imap <Left>  <NOP>
+nmap <Right> <NOP>
+imap <Right> <NOP>
 
 " Disable <F1> key to prevent help page opens up accidentally.
 noremap  <F1> <NOP>
