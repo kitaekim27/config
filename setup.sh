@@ -31,8 +31,7 @@ setup_nvm()
 	# Node Version Manager.
 	# Check [https://github.com/nvm-sh/nvm] for detailed description.
 	wget -qO- https://raw.githubusercontent.com/nvm-sh/nvm/v0.38.0/install.sh | zsh
-	source ~/.zshrc # TOOD: This command freqeuntly fails due to unexpected newline error.
-	[ command -v nvm ] && nvm install node
+	[ command -v nvm ] && zsh -c "nvm install node"
 }
 
 setup_neovim()
