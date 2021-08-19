@@ -29,33 +29,34 @@ imap <Left>  <NOP>
 nmap <Right> <NOP>
 imap <Right> <NOP>
 
-" Disable <F1> key to prevent help page opens up accidentally.
+" Disable <F1> key to prevent help page from opening up accidentally.
 noremap  <F1> <NOP>
 inoremap <F1> <NOP>
 
-" Mapping to resize window split.
+" Map to resize window splits.
 noremap <silent> <C-h> :vertical resize -1<CR>
 noremap <silent> <C-j> :resize +1<CR>
 noremap <silent> <C-k> :resize -1<CR>
 noremap <silent> <C-l> :vertical resize +1<CR>
 
-" Find a file under current working directory.
+" Find a file in current working directory.
 noremap <leader>f :FZF<CR>
 " Find a buffer.
 noremap <leader>b :Buffers<CR>
 
+" For the vim-tmux-navigator plugin.
 nnoremap <silent> <M-h> :TmuxNavigateLeft<CR>
-nnoremap <silent> <M-l> :TmuxNavigateRight<CR>
-nnoremap <silent> <M-k> :TmuxNavigateUp<CR>
 nnoremap <silent> <M-j> :TmuxNavigateDown<CR>
+nnoremap <silent> <M-k> :TmuxNavigateUp<CR>
+nnoremap <silent> <M-l> :TmuxNavigateRight<CR>
 
-" Searching configurations.
+" [Searching]
 set ignorecase
 set incsearch
 set nowrapscan
 set smartcase
 
-" Editor configurations.
+" [Editor]
 set nowrap
 set noswapfile
 set scrolloff=5
@@ -64,7 +65,7 @@ set clipboard=unnamed,unnamedplus " Use system clipboard.
 set undodir="/tmp"
 set undofile
 
-" Display configurations.
+" [Displaying]
 set cursorline
 set termguicolors
 set background=dark
@@ -74,7 +75,7 @@ hi clear SignColumn " Use terminal color scheme for SignColumn.
 hi Pmenu ctermfg=NONE ctermbg=236 cterm=NONE guifg=NONE guibg=#64666d gui=NONE
 hi PmenuSel ctermfg=NONE ctermbg=24 cterm=NONE guifg=NONE guibg=#204a86 gui=NONE
 
-" Indentation configurations.
+" [Indentation]
 set tabstop=4
 set softtabstop=4
 set shiftwidth=4
@@ -159,14 +160,14 @@ autocmd Filetype xml setlocal
 	\ noexpandtab
 	\ smartindent
 
-autocmd BufRead,BufNewFile ~/workspace/linux/** setlocal
+autocmd BufRead,BufNewFile $WORKSPACE/linux/** setlocal
 	\ tabstop=8
 	\ softtabstop=8
 	\ shiftwidth=8
 	\ noexpandtab
 	\ cindent
 
-autocmd BufRead,BufNewFile ~/workspace/gnu/** setlocal
+autocmd BufRead,BufNewFile $WORKSPACE/gnu/** setlocal
 	\ tabstop=2
 	\ softtabstop=2
 	\ shiftwidth=2
