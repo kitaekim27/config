@@ -38,6 +38,7 @@ setup_fnm()
     # Install fnm, a node version manager.
     # Check [https://github.com/Schniz/fnm] for detailed description.
     curl -fsSL https://fnm.vercel.app/install | bash # Note that you can't use zsh here.
+    echo 'export PATH="$PATH:~/.fnm"' >> ~/.zshrc
     echo 'eval "$(fnm env)"' >> ~/.zshrc
     zsh -c "fnm completions --shell zsh"
     zsh -c "fnm install node"
