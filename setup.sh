@@ -1,11 +1,11 @@
 #!/bin/sh
 
-# Make shell to...
+# Make the shell to...
 # -e: Halt just like `exit` command whenver comamnd fails.
 # -u: Do not allow to use undefined variables.
 set -eu
 
-POST_INSTALL_INSTRUCTIONS="[fcitx] Set Korean as a first language."
+POST_INSTALL_INSTRUCTIONS="[fcitx] Set Korean as a first language.\n"
 
 setup_basic_tools()
 {
@@ -33,12 +33,14 @@ setup_zsh()
     install "${PWD}/dotfiles/zshrc" "${HOME}/.zshrc"
 }
 
-setup_nvm()
+setup_fnm()
 {
-    # Install nvm, a node version manager.
-    # Check [https://github.com/nvm-sh/nvm] for detailed description.
-    wget -qO- https://raw.githubusercontent.com/nvm-sh/nvm/v0.38.0/install.sh | zsh
-    zsh -i -c "command -v nvm && nvm install node"
+    # Install fnm, a node version manager.
+    # Check [https://github.com/Schniz/fnm] for detailed description.
+    curl -fsSL https://fnm.vercel.app/install | bash # Note that you can't use zsh here.
+    echo 'eval "$(fnm env)"' >> ~/.zshrc
+    zsh -c "fnm completions --shell zsh"
+    zsh -c "fnm install node"
 }
 
 setup_neovim()
@@ -95,7 +97,7 @@ sudo apt-get upgrade -yq
 setup_basic_tools
 setup_fcitx_hangul
 setup_zsh
-setup_nvm
+setup_fnm
 setup_neovim
 setup_tmux
 setup_gef
