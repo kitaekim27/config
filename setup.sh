@@ -12,7 +12,8 @@ setup_basic_tools()
     sudo apt-get install -yq \
         python-is-python3 python3-pip \
         build-essential bear clangd gdb git \
-        curl wget net-tools
+        curl wget net-tools \
+        nodejs
 }
 
 setup_fcitx_hangul()
@@ -31,17 +32,6 @@ setup_zsh()
     [ -d "${HOME}/.oh-my-zsh" ] && rm -rf "${HOME}/.oh-my-zsh"
     curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh | zsh
     install "${PWD}/dotfiles/zshrc" "${HOME}/.zshrc"
-}
-
-setup_fnm()
-{
-    # Install fnm, a node version manager.
-    # Check [https://github.com/Schniz/fnm] for detailed description.
-    curl -fsSL https://fnm.vercel.app/install | bash # Note that you can't use zsh here.
-    echo 'export PATH="$PATH:~/.fnm"' >> ~/.zshrc
-    echo 'eval "$(fnm env)"' >> ~/.zshrc
-    zsh -c "fnm completions --shell zsh"
-    zsh -c "fnm install node"
 }
 
 setup_neovim()
@@ -98,7 +88,6 @@ sudo apt-get upgrade -yq
 setup_basic_tools
 setup_fcitx_hangul
 setup_zsh
-setup_fnm
 setup_neovim
 setup_tmux
 setup_gef
