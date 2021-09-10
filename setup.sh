@@ -70,7 +70,10 @@ setup_gef()
 {
     # Install GEF, an extended GDB.
     # Check [https://github.com/hugsy/gef] for detailed description.
-    wget -qO- https://github.com/hugsy/gef/raw/master/scripts/gef.sh | zsh
+
+    # Note that you can't use zsh here.
+    wget -qO- https://github.com/hugsy/gef/raw/master/scripts/gef.sh | bash
+
     pip -q install capstone unicorn keystone-engine ropper
 }
 
