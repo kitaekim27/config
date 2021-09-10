@@ -176,3 +176,10 @@ autocmd BufRead,BufNewFile $WORKSPACE/gnu/** setlocal
 	\ cinoptions=>4,n-2,{2,^-2,:2,=2,g0,h2,p5,t0,+2,(0,u0,w1,m1
 	\ cindent
 
+autocmd BufRead,BufNewFile $WORKSPACE/google/** setlocal
+	\ tabstop=2
+	\ softtabstop=2
+	\ shiftwidth=2
+	\ expandtab
+	\ cindent
+
