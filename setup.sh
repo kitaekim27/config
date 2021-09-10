@@ -93,7 +93,6 @@ setup_fcitx_hangul
 setup_zsh
 setup_neovim
 setup_tmux
-setup_gef
 
 sudo apt-get autoclean -yq
 sudo apt-get autoremove -yq
