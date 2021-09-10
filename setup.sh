@@ -94,7 +94,6 @@ setup_zsh
 setup_neovim
 setup_tmux
 setup_gef
-setup_lxd
 
 sudo apt-get autoclean -yq
 sudo apt-get autoremove -yq
