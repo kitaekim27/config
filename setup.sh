@@ -5,8 +5,6 @@
 # -u: Do not allow to use undefined variables.
 set -eu
 
-POST_INSTALL_INSTRUCTIONS="[fcitx] Set Korean as a first language.\n"
-
 setup_basic_tools()
 {
     sudo apt-get install -yq \
@@ -97,5 +95,12 @@ setup_tmux
 sudo apt-get autoclean -yq
 sudo apt-get autoremove -yq
 
-printf "%s" "${POST_INSTALL_INSTRUCTIONS}"
+cat <<EOF
+
+
+Installation finished!
+
+Post installation instructions:
+[fcitx]: Set Korean as a first language.
+EOF
 
