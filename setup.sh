@@ -10,8 +10,7 @@ setup_basic_tools()
     sudo apt-get install -yq \
         python-is-python3 python3-pip \
         build-essential bear clangd gdb git \
-        curl wget net-tools \
-        nodejs
+        curl wget net-tools
 }
 
 setup_fcitx_hangul()
@@ -73,6 +72,13 @@ setup_tmux()
     install "${PWD}/dotfiles/tmux.conf" "${HOME}/.tmux.conf"
 }
 
+setup_node()
+{
+    # Install nodejs, a JavaScript runtime.
+    curl -fsSL https://deb.nodesource.com/setup_current.x | sudo -E bash -
+    sudo apt-get install -y nodejs
+}
+
 setup_gef()
 {
     # Install GEF, an extended GDB.
@@ -98,6 +104,7 @@ sudo apt-get upgrade -yq
 setup_basic_tools
 setup_fcitx_hangul
 setup_zsh
+setup_node
 setup_neovim
 setup_tmux
 
