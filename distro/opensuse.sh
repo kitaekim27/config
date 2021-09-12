@@ -14,7 +14,7 @@ setup_basic_tools()
 setup_zsh()
 {
     sudo zypper install -y zsh
-    chsh -s $(whereis zsh) "${USER}" # Set the zsh as a default login shell.
+    chsh -s "$(which zsh)" "${USER}" # Set the zsh as a default login shell.
 
     # Install oh-my-zsh, a zsh configuration framework.
     # Check [https://github.com/ohmyzsh/ohmyzsh] for detailed description.
