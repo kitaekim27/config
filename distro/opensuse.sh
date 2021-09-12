@@ -14,7 +14,7 @@ setup_basic_tools()
 setup_zsh()
 {
     sudo zypper install -y zsh
-    sudo chsh -s /usr/bin/zsh "${USER}" # Set the zsh as a default login shell.
+    chsh -s $(whereis zsh) "${USER}" # Set the zsh as a default login shell.
 
     # Install oh-my-zsh, a zsh configuration framework.
     # Check [https://github.com/ohmyzsh/ohmyzsh] for detailed description.
@@ -53,7 +53,7 @@ setup_tmux()
     install "${PWD}/dotfiles/tmux.conf" "${HOME}/.tmux.conf"
 }
 
-zypper dist-upgrade
+sudo zypper dist-upgrade
 
 setup_basic_tools
 setup_zsh
