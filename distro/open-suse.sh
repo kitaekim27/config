@@ -11,12 +11,6 @@ setup_basic_tools()
         nodejs-default
 }
 
-setup_fcitx_hangul()
-{
-    sudo zypper install -y fcitx-hangul
-    im-config -y fcitx # Set the fcitx as a default input method.
-}
-
 setup_zsh()
 {
     sudo zypper install -y zsh
@@ -62,7 +56,6 @@ setup_tmux()
 zypper dist-upgrade
 
 setup_basic_tools
-setup_fcitx_hangul
 setup_zsh
 setup_neovim
 setup_tmux
@@ -73,7 +66,7 @@ cat << EOF
 Installation finished!
 
 Post installation instructions:
-[fcitx]: Set Korean as a first language.
+Set Korean as a first language using YaST.
 
 
 EOF
