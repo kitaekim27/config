@@ -19,7 +19,7 @@ case ${NAME} in
         ;;
     "openSUSE Tumbleweed" | "openSUSE Leap")
         echo "openSUSE system detected."
-        . "${PWD}/distro/open-suse.sh"
+        . "${PWD}/distro/opensuse.sh"
         ;;
     *)
         echo "Unknown system detected. Abort."
