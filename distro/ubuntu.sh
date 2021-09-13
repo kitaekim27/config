@@ -1,7 +1,8 @@
 #!/bin/sh
+# Last update: 09.13.2021
 
 # Make the shell to...
-# -e: Halt whenver a comamnd fails.
+# -e: Halt whenver comamnds fail.
 # -u: Do not allow to use undefined variables.
 set -eu
 
@@ -50,8 +51,9 @@ setup_neovim()
     # Check [https://github.com/junegunn/vim-plug] for detailed description.
     curl -fLo "$HOME/.local/share/nvim/site/autoload/plug.vim" \
         --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+
     install -D "${PWD}/dotfiles/init.vim" "${HOME}/.config/nvim/init.vim"
-    nvim --headless +PlugInstall +qa
+    nvim --headless +PlugInstall +qa # Need to install coc.nvim before applying config for the plugin.
     cat "${PWD}/dotfiles/coc-config.vim" >> "${HOME}/.config/nvim/init.vim"
 }
 
@@ -118,5 +120,7 @@ Installation finished!
 
 Post installation instructions:
 [fcitx]: Set Korean as a first language.
+
+
 EOF
 

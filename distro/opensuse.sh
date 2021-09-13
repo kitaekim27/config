@@ -70,3 +70,4 @@ Set Korean as a first language using YaST.
 
 
 EOF
+
