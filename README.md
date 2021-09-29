@@ -1,9 +1,13 @@
-# setup
+# SETUP
+
+This is a collection of my personal configuration files.
 
 ## Usage
 
-Run `setup.sh`
+Run `setup.sh`.
 
-## Note
+## Supported distributions
 
-This script is intended to be used in a Debian-based environment. (e.g. Debian, Ubuntu)
+ - Ubuntu-based distributions.
+ - OpenSUSE.
+
