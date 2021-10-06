@@ -1,10 +1,10 @@
-# SETUP
+# Setup
 
-This is a collection of my personal configuration files.
+This is a collection of my configuration files.
 
 ## Usage
 
-Run `setup.sh`.
+Run `setup`.
 
 ## Supported distributions
 
