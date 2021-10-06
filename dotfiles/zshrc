@@ -1,7 +1,7 @@
 # If this shell is not running interactively, just return.
 case $- in
-    *i*) ;;
-    *) return ;;
+  *i*) ;;
+  *) return ;;
 esac
 
 export EDITOR="nvim"
@@ -25,8 +25,8 @@ source "${ZSH}/oh-my-zsh.sh"
 
 # If the shell is not running on a ssh connection, create a new tmux session.
 [ -z "${SSH_CLIENT}" ] \
-    && [ -z "${SSH_TTY}" ] \
-    && command -v tmux &> /dev/null \
-    && [ -z "${TMUX}" ] \
-    && tmux new
+  && [ -z "${SSH_TTY}" ] \
+  && command -v tmux &> /dev/null \
+  && [ -z "${TMUX}" ] \
+  && tmux new
 

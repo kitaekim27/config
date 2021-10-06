@@ -1,0 +1,38 @@
+#!/bin/bash
+#
+# Main installation script.
+
+set -o errexit -o nounset -o errtrace -o pipefail
+
+export SETUP_ROOT_DIR="${PWD}"
+
+source ${SETUP_ROOT_DIR}/lib/common.sh
+
+main() {
+  if [[ -f "/etc/os-release" ]]; then
+    source "/etc/os-release"
+  elif [[ -f "/usr/lib/os-release" ]]; then
+    source "/usr/lib/os-release"
+  else
+    error "Can't find the os-release file"
+    exit
+  fi
+
+  case ${NAME} in
+    "Ubuntu")
+      echo "Ubuntu system detected."
+      source "distro/ubuntu.sh"
+      ;;
+    "openSUSE Tumbleweed" | "openSUSE Leap")
+      echo "openSUSE system detected."
+      source "distro/opensuse.sh"
+      ;;
+    *)
+      error "Unknown system detected."
+      exit
+      ;;
+  esac
+}
+
+main $@
+
