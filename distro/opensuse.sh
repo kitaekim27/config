@@ -5,7 +5,7 @@
 
 set -o errexit -o nounset -o errtrace -o pipefail
 
-source ${SETUP_ROOT_DIR}/lib/common.sh
+source "${SETUP_ROOT_DIR}"/lib/common.sh
 
 setup_basic_tools() {
   sudo zypper install -y \
@@ -25,11 +25,11 @@ setup_zsh() {
 
   # Install zsh-syntax-highlighting plugin, a plugin for fish-like syntax highlighting.
   git clone https://github.com/zsh-users/zsh-syntax-highlighting.git --depth=1 \
-    ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting
+    "${ZSH_CUSTOM:-~/.oh-my-zsh/custom}"/plugins/zsh-syntax-highlighting
 
   # Install zsh-autosuggestions plugin, a plugin for fish-like suggestions.
   git clone https://github.com/zsh-users/zsh-autosuggestions --depth=1 \
-    ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
+    "${ZSH_CUSTOM:-~/.oh-my-zsh/custom}"/plugins/zsh-autosuggestions
 
   install "${PWD}/dotfiles/zshrc" "${HOME}/.zshrc"
 }
@@ -68,5 +68,5 @@ main() {
   success "${instructions}"
 }
 
-main ${@}
+main "${@}"
 
