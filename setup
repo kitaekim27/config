@@ -6,7 +6,7 @@ set -o errexit -o nounset -o errtrace -o pipefail
 
 export SETUP_ROOT_DIR="${PWD}"
 
-source ${SETUP_ROOT_DIR}/lib/common.sh
+source "${SETUP_ROOT_DIR}"/lib/common.sh
 
 main() {
   if [[ -f "/etc/os-release" ]]; then
@@ -18,7 +18,7 @@ main() {
     exit
   fi
 
-  case ${NAME} in
+  case "${NAME}" in
     "Ubuntu")
       echo "Ubuntu system detected."
       source "distro/ubuntu.sh"
@@ -34,5 +34,5 @@ main() {
   esac
 }
 
-main $@
+main "$@"
 
