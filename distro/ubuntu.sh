@@ -39,6 +39,11 @@ setup_zsh() {
   install "${PWD}/dotfiles/zshrc" "${HOME}/.zshrc"
 }
 
+setup_bash() {
+  sudo chsh -s /usr/bin/bash "${USER}"
+  cat "${PWD}/dotfiles/bashrc" >> "${HOME}/.bashrc"
+}
+
 setup_neovim() {
   # Install neovim, a modern fork of the good old vim.
   # Check [https://github.com/neovim/neovim] for detailed description.
@@ -98,7 +103,7 @@ main() {
 
   setup_basic_tools
   setup_fcitx_hangul
-  setup_zsh
+  setup_bash
   setup_node
   setup_neovim
   setup_tmux
