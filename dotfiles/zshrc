@@ -13,6 +13,7 @@ alias vim="nvim"
 alias vi="nvim"
 alias v="nvim"
 alias g="grep"
+alias a="ag --number"
 
 # export EDITOR="emacsclient -tc"
 # alias emacs="emacsclient -tc"

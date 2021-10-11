@@ -11,7 +11,7 @@ setup_basic_tools() {
   sudo apt-get install -yq \
     python-is-python3 python3-pip \
     build-essential bear clangd gdb git \
-    curl wget net-tools
+    curl wget net-tools silversearcher-ag
 }
 
 setup_fcitx_hangul() {
