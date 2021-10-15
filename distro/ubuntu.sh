@@ -5,7 +5,7 @@
 
 set -o errexit -o nounset -o errtrace -o pipefail
 
-source "${SETUP_ROOT_DIR}"/lib/common.sh
+source "${SRCIPT_DIR}"/lib/common.sh
 
 setup_basic_tools() {
   sudo apt-get install -yq \

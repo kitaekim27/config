@@ -4,9 +4,9 @@
 
 set -o errexit -o nounset -o errtrace -o pipefail
 
-export SETUP_ROOT_DIR="${PWD}"
+export SRCIPT_DIR="${PWD}"
 
-source "${SETUP_ROOT_DIR}"/lib/common.sh
+source "${SRCIPT_DIR}"/lib/common.sh
 
 main() {
   if [[ -f "/etc/os-release" ]]; then
