@@ -13,6 +13,15 @@ alias vim="nvim"
 # alias emacs="emacsclient -tc"
 # alias e="emacsclies -tc"
 
+f() {
+  local directory="${1}"
+  local name="${2}"
+
+  shift 2
+
+  find "${directory}" -name "${name}" "${@}"
+}
+
 # If the shell is not running on a ssh connection, create a new tmux session.
 [ -z "${SSH_CLIENT}" ] \
   && [ -z "${SSH_TTY}" ] \
