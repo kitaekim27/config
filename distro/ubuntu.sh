@@ -1,5 +1,5 @@
 #!/bin/bash
-# Last update: 10.07.2021
+# Last update: 10.17.2021
 #
 # Installation script for Ubuntu.
 
@@ -11,7 +11,8 @@ setup_basic_tools() {
   sudo apt-get install -yq \
     python-is-python3 python3-pip \
     build-essential bear clangd gdb git \
-    curl wget net-tools silversearcher-ag
+    curl wget net-tools silversearcher-ag \
+    fd-find
 }
 
 setup_fcitx_hangul() {

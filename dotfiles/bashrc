@@ -1,9 +1,9 @@
-export WORKSPACE="${HOME}/Desktop"
 export EDITOR="nvim"
 export PATH="${HOME}/.local/bin:${PATH}"
+export WORKSPACE="${HOME}/Desktop"
 
 alias a="ag --number"
-alias g="grep --recursive --line-number --color"
+alias fd="fdfind"
 alias t="tree -C"
 alias v="nvim"
 alias vi="nvim"
@@ -11,26 +11,7 @@ alias vim="nvim"
 
 # export EDITOR="emacsclient -tc"
 # alias emacs="emacsclient -tc"
-# alias e="emacsclies -tc"
-
-f() {
-  case "${#}" in
-    0)
-      find
-      ;;
-    1)
-      find "${1}"
-      ;;
-    *)
-      local directory="${1}"
-      local name="${2}"
-
-      shift 2
-
-      find "${directory}" -name "${name}" "${@}"
-      ;;
-  esac
-}
+# alias e="emacsclient -tc"
 
 # If the shell is not running on a ssh connection, create a new tmux session.
 [ -z "${SSH_CLIENT}" ] \
