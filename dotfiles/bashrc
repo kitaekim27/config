@@ -3,6 +3,7 @@ export PATH="${HOME}/.local/bin:${PATH}"
 export WORKSPACE="${HOME}/Desktop"
 
 alias a="ag --number"
+alias f="fdfind"
 alias fd="fdfind"
 alias t="tree -C"
 alias v="nvim"
