@@ -98,6 +98,11 @@ setup_lxd() {
   install "${PWD}/scripts/lxd/*" "${HOME}/.local/bin/"
 }
 
+setup_fzf() {
+  git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf
+  yes "Y" | bash ~/.fzf/install
+}
+
 main() {
   sudo apt-get update -yq
   sudo apt-get upgrade -yq
@@ -108,6 +113,7 @@ main() {
   setup_node
   setup_neovim
   setup_tmux
+  setup_fzf
 
   sudo apt-get autoclean -yq
   sudo apt-get autoremove -yq
