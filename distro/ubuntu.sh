@@ -1,5 +1,5 @@
 #!/bin/bash
-# Last update: 10.17.2021
+# Last update: 10.27.2021
 #
 # Installation script for Ubuntu.
 
@@ -99,8 +99,11 @@ setup_lxd() {
 }
 
 setup_fzf() {
+  [[ -d ~/.fzf ]] && rm -rf ~/.fzf
   git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf
-  yes "Y" | bash ~/.fzf/install
+  # I know this looks weird but fzf's installation script sucks too much. It fails every time
+  # even after successful installation. Deal with it.
+  yes "y" | ~/.fzf/install || :
 }
 
 main() {
