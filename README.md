@@ -1,10 +1,10 @@
-# Setup
+# Terminal Setup
 
-This is a collection of my configuration files.
+This is a collection of my terminal configuration files.
 
 ## Usage
 
-Run `setup`.
+Run `install`.
 
 ## Supported distributions
 
