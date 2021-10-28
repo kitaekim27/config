@@ -7,14 +7,14 @@ set -o errexit -o nounset -o errtrace -o pipefail
 
 source "${SRCIPT_DIR}"/lib/common.sh
 
-setup_basic_tools() {
+install_basic_tools() {
   sudo zypper install -y \
     python python3 \
     clang-devel clang-tools Bear git \
     nodejs-default
 }
 
-setup_zsh() {
+install_zsh() {
   sudo zypper install -y zsh
   chsh -s "$(which zsh)" "${USER}" # Set the zsh as a default login shell.
 
@@ -34,7 +34,7 @@ setup_zsh() {
   install "${PWD}/dotfiles/zshrc" "${HOME}/.zshrc"
 }
 
-setup_neovim() {
+install_neovim() {
   # Install neovim, a modern fork of the good old vim.
   # Check [https://github.com/neovim/neovim] for detailed description.
   sudo zypper install -y neovim
@@ -48,7 +48,7 @@ setup_neovim() {
   cat "${PWD}/dotfiles/coc-config.vim" >> "${HOME}/.config/nvim/init.vim"
 }
 
-setup_tmux() {
+install_tmux() {
   sudo zypper install -y tmux
   install "${PWD}/dotfiles/tmux.conf" "${HOME}/.tmux.conf"
 }
@@ -56,10 +56,10 @@ setup_tmux() {
 main() {
   sudo zypper dist-upgrade
 
-  setup_basic_tools
-  setup_zsh
-  setup_neovim
-  setup_tmux
+  install_basic_tools
+  install_zsh
+  install_neovim
+  install_tmux
 
   local instructions=""
   instructions+="[fcitx]: Set fcitx as a main input method using YaST.\n"

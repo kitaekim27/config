@@ -7,7 +7,7 @@ set -o errexit -o nounset -o errtrace -o pipefail
 
 source "${SRCIPT_DIR}"/lib/common.sh
 
-setup_basic_tools() {
+install_basic_tools() {
   sudo apt-get install -yq \
     python-is-python3 python3-pip \
     build-essential bear clangd gdb git \
@@ -15,12 +15,12 @@ setup_basic_tools() {
     fd-find
 }
 
-setup_fcitx_hangul() {
+install_fcitx_hangul() {
   sudo apt-get install -yq fcitx-hangul
   im-config -n fcitx # Set the fcitx as a default input method.
 }
 
-setup_zsh() {
+install_zsh() {
   sudo apt-get install -yq zsh
   sudo chsh -s /usr/bin/zsh "${USER}" # Set the zsh as a default login shell.
 
@@ -40,12 +40,12 @@ setup_zsh() {
   install "${PWD}/dotfiles/zshrc" "${HOME}/.zshrc"
 }
 
-setup_bash() {
+install_bash() {
   sudo chsh -s /usr/bin/bash "${USER}"
   cat "${PWD}/dotfiles/bashrc" >> "${HOME}/.bashrc"
 }
 
-setup_neovim() {
+install_neovim() {
   # Install neovim, a modern fork of the good old vim.
   # Check [https://github.com/neovim/neovim] for detailed description.
   sudo apt-get install -yq neovim
@@ -60,7 +60,7 @@ setup_neovim() {
   cat "${PWD}/dotfiles/coc-config.vim" >> "${HOME}/.config/nvim/init.vim"
 }
 
-setup_emacs() {
+install_emacs() {
   sudo apt-get install -yq emacs
   systemctl --user enable emacs # Launch emacs daemon automatically.
 
@@ -70,18 +70,18 @@ setup_emacs() {
   git clone -q "https://github.com/syl20bnr/spacemacs ${HOME}/.emacs.d"
 }
 
-setup_tmux() {
+install_tmux() {
   sudo apt-get install -yq tmux
   install "${PWD}/dotfiles/tmux.conf" "${HOME}/.tmux.conf"
 }
 
-setup_node() {
+install_node() {
   # Install nodejs, a JavaScript runtime.
-  curl -fsSL https://deb.nodesource.com/setup_current.x | sudo -E bash -
+  curl -fsSL https://deb.nodesource.com/install_current.x | sudo -E bash -
   sudo apt-get install -y nodejs
 }
 
-setup_gef() {
+install_gef() {
   # Install GEF, an extended GDB.
   # Check [https://github.com/hugsy/gef] for detailed description.
 
@@ -91,14 +91,14 @@ setup_gef() {
   pip -q install capstone unicorn keystone-engine ropper
 }
 
-setup_lxd() {
+install_lxd() {
   sudo apt-get install -yq lxd
   sudo usermod -aG lxd "${USER}"
   yes '' | lxd init # Initialize the LXD with default options.
   install "${PWD}/scripts/lxd/*" "${HOME}/.local/bin/"
 }
 
-setup_fzf() {
+install_fzf() {
   [[ -d ~/.fzf ]] && rm -rf ~/.fzf
   git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf
   # I know this looks weird but fzf's installation script sucks too much. It fails every time
@@ -110,13 +110,13 @@ main() {
   sudo apt-get update -yq
   sudo apt-get upgrade -yq
 
-  setup_basic_tools
-  setup_fcitx_hangul
-  setup_bash
-  setup_node
-  setup_neovim
-  setup_tmux
-  setup_fzf
+  install_basic_tools
+  install_fcitx_hangul
+  install_bash
+  install_node
+  install_neovim
+  install_tmux
+  install_fzf
 
   sudo apt-get autoclean -yq
   sudo apt-get autoremove -yq
