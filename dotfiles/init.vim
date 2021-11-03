@@ -183,3 +183,10 @@ autocmd BufRead,BufNewFile $WORKSPACE/google/** setlocal
 	\ expandtab
 	\ cindent
 
+autocmd BufRead,BufNewFile README.md setlocal
+    \ tabstop=4
+    \ softtabstop=4
+    \ shiftwidth=4
+    \ expandtab
+    \ autoindent
+    \ textwidth=80
