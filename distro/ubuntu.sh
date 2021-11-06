@@ -5,7 +5,7 @@
 
 set -o errexit -o nounset -o errtrace -o pipefail
 
-source "${SRCIPT_DIR}"/lib/common.sh
+source "${SCRIPT_ROOT_DIR}"/lib/common.sh
 
 install_basic_tools() {
   sudo apt-get install -yq \
@@ -45,21 +45,6 @@ install_bash() {
   cat "${PWD}/dotfiles/bashrc" >> "${HOME}/.bashrc"
 }
 
-install_neovim() {
-  # Install neovim, a modern fork of the good old vim.
-  # Check [https://github.com/neovim/neovim] for detailed description.
-  sudo apt-get install -yq neovim
-
-  # Install vim-plug, a vim plugin manager.
-  # Check [https://github.com/junegunn/vim-plug] for detailed description.
-  curl -fLo "$HOME/.local/share/nvim/site/autoload/plug.vim" \
-    --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
-
-  install -D "${PWD}/dotfiles/init.vim" "${HOME}/.config/nvim/init.vim"
-  nvim --headless +PlugInstall +qa # Need to install coc.nvim before applying config for the plugin.
-  cat "${PWD}/dotfiles/coc-config.vim" >> "${HOME}/.config/nvim/init.vim"
-}
-
 install_emacs() {
   sudo apt-get install -yq emacs
   systemctl --user enable emacs # Launch emacs daemon automatically.
@@ -77,8 +62,13 @@ install_tmux() {
 
 install_node() {
   # Install nodejs, a JavaScript runtime.
-  curl -fsSL https://deb.nodesource.com/install_current.x | sudo -E bash -
+  curl -fsSL https://deb.nodesource.com/setup_lts.x | sudo -E bash -
   sudo apt-get install -y nodejs
+}
+
+install_neovim() {
+  sudo apt-get install -y neovim
+  "${SCRIPT_ROOT_DIR}"/lib/setup_neovim.sh
 }
 
 install_gef() {

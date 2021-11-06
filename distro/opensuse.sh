@@ -5,7 +5,7 @@
 
 set -o errexit -o nounset -o errtrace -o pipefail
 
-source "${SRCIPT_DIR}"/lib/common.sh
+source "${SCRIPT_ROOT_DIR}"/lib/common.sh
 
 install_basic_tools() {
   sudo zypper install -y \
@@ -35,17 +35,8 @@ install_zsh() {
 }
 
 install_neovim() {
-  # Install neovim, a modern fork of the good old vim.
-  # Check [https://github.com/neovim/neovim] for detailed description.
   sudo zypper install -y neovim
-
-  # Install vim-plug, a vim plugin manager.
-  # Check [https://github.com/junegunn/vim-plug] for detailed description.
-  curl -fLo "${HOME}/.local/share/nvim/site/autoload/plug.vim" \
-    --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
-  install -D "${PWD}/dotfiles/init.vim" "${HOME}/.config/nvim/init.vim"
-  nvim --headless +PlugInstall +qa
-  cat "${PWD}/dotfiles/coc-config.vim" >> "${HOME}/.config/nvim/init.vim"
+  "${SCRIPT_ROOT_DIR}"/lib/setup_neovim.sh
 }
 
 install_tmux() {
