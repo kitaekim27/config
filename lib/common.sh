@@ -6,7 +6,7 @@ subcmd() {
 
 log() {
   local message="${1}"
-  echo -e "[$(date +'%Y-%m-%d %H:%M:%S')] ${message}"
+  echo -e "[$(date +'%Y-%m-%d %H:%M:%S')] \e[1m\e[32mINFO:\e[0m ${message}"
 }
 
 error() {
