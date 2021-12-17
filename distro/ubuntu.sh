@@ -102,8 +102,8 @@ install_fzf() {
 }
 
 main() {
-  sudo apt-get update -yq
-  sudo apt-get upgrade -yq
+  log "Update package metadata..." && subcmd sudo apt-get update -y
+  log "Upgrade system packages..." && subcmd sudo apt-get upgrade -y
 
   log "Install basic tools..." && subcmd install_basic_tools
   log "Install fcitx..." && subcmd install_fcitx_hangul
@@ -113,8 +113,8 @@ main() {
   log "Install tmux..." && subcmd install_tmux
   log "Install fzf..." && subcmd install_fzf
 
-  sudo apt-get autoclean -yq
-  sudo apt-get autoremove -yq
+  log "Clean package metadata..." && subcmd sudo apt-get autoclean -yq
+  log "Clean system packages..." && subcmd sudo apt-get autoremove -yq
 
   local instructions=""
   instructions+="[fcitx]: Set fcitx as a main input method.\n"
