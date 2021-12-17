@@ -1,5 +1,9 @@
 #!/bin/bash
 
+subcmd() {
+  ${@} | nl -b n
+}
+
 log() {
   local message="${1}"
   echo -e "[$(date +'%Y-%m-%d %H:%M:%S')] ${message}"

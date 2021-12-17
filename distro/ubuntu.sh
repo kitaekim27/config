@@ -8,7 +8,7 @@ set -o errexit -o nounset -o errtrace -o pipefail
 source "${SCRIPT_ROOT_DIR}"/lib/common.sh
 
 install_basic_tools() {
-  sudo apt-get install -yq \
+  sudo apt-get install -y \
     python-is-python3 python3-pip \
     build-essential bear clangd gdb git \
     curl wget net-tools \
@@ -16,12 +16,12 @@ install_basic_tools() {
 }
 
 install_fcitx_hangul() {
-  sudo apt-get install -yq fcitx-hangul
+  sudo apt-get install -y fcitx-hangul
   im-config -n fcitx # Set the fcitx as a default input method.
 }
 
 install_zsh() {
-  sudo apt-get install -yq zsh
+  sudo apt-get install -y zsh
   sudo chsh -s /usr/bin/zsh "${USER}" # Set the zsh as a default login shell.
 
   # Install oh-my-zsh, a zsh configuration framework.
@@ -61,7 +61,7 @@ install_emacs() {
 }
 
 install_tmux() {
-  sudo apt-get install -yq tmux
+  sudo apt-get install -y tmux
   install "${PWD}/dotfiles/tmux.conf" "${HOME}/.tmux.conf"
 }
 
@@ -83,11 +83,11 @@ install_gef() {
   # Note that you can't use zsh here.
   wget -qO- https://github.com/hugsy/gef/raw/master/scripts/gef.sh | bash
 
-  pip -q install capstone unicorn keystone-engine ropper
+  pip install capstone unicorn keystone-engine ropper
 }
 
 install_lxd() {
-  sudo apt-get install -yq lxd
+  sudo apt-get install -y lxd
   sudo usermod -aG lxd "${USER}"
   yes '' | lxd init # Initialize the LXD with default options.
   install "${PWD}/scripts/lxd/*" "${HOME}/.local/bin/"
@@ -105,13 +105,13 @@ main() {
   sudo apt-get update -yq
   sudo apt-get upgrade -yq
 
-  install_basic_tools
-  install_fcitx_hangul
-  install_bash
-  install_node
-  install_neovim
-  install_tmux
-  install_fzf
+  log "Install basic tools..." && subcmd install_basic_tools
+  log "Install fcitx..." && subcmd install_fcitx_hangul
+  log "Install bash..." && subcmd install_bash
+  log "Install node..." && subcmd install_node
+  log "Install neovim..." && subcmd install_neovim
+  log "Install tmux..." && subcmd install_tmux
+  log "Install fzf..." && subcmd install_fzf
 
   sudo apt-get autoclean -yq
   sudo apt-get autoremove -yq
