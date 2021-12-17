@@ -1,5 +1,5 @@
 #!/bin/bash
-# Last update: 10.27.2021
+# Last update: 12.17.2021
 #
 # Installation script for Ubuntu.
 
@@ -11,8 +11,8 @@ install_basic_tools() {
   sudo apt-get install -yq \
     python-is-python3 python3-pip \
     build-essential bear clangd gdb git \
-    curl wget net-tools silversearcher-ag \
-    fd-find
+    curl wget net-tools \
+    silversearcher-ag fd-find
 }
 
 install_fcitx_hangul() {
@@ -41,7 +41,12 @@ install_zsh() {
 }
 
 install_bash() {
-  sudo chsh -s /usr/bin/bash "${USER}"
+  # Install bash-it, a community driven bash configuration framework.
+  git clone --depth=1 https://github.com/Bash-it/bash-it.git ~/.bash_it
+  ~/.bash_it/install.sh
+  sed -i "s/BASH_IT_THEME='*'/BASH_IT_THEME='easy'/p" ~/.bashrc
+
+  # Copy general configuration.
   cat "${PWD}/dotfiles/bashrc" >> "${HOME}/.bashrc"
 }
 
