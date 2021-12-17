@@ -9,16 +9,16 @@ if [[ -f "/etc/os-release" ]]; then
 elif [[ -f "/usr/lib/os-release" ]]; then
   source "/usr/lib/os-release"
 else
-  error "Can't find the os-release file"
+  error "Can't find the os-release file."
 fi
 
 case "${NAME}" in
   "Ubuntu")
-    echo "Ubuntu system detected."
+    log "Ubuntu system detected."
     ./distro/ubuntu.sh
     ;;
   "openSUSE Tumbleweed" | "openSUSE Leap")
-    echo "openSUSE system detected."
+    log "openSUSE system detected."
     ./distro/opensuse.sh
     ;;
   *)

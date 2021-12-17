@@ -115,7 +115,7 @@ main() {
   instructions+="[fcitx]: Set fcitx as a main input method.\n"
   instructions+="[fcitx]: Configure hangul input."
 
-  success "${instructions}"
+  success_installation "${instructions}"
 }
 
 main "${@}"
