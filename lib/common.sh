@@ -1,7 +1,7 @@
 #!/bin/bash
 
 subcmd() {
-  ${@} | nl -b n
+  ${@} | nl
 }
 
 log() {
