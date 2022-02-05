@@ -1,16 +1,8 @@
 #!/bin/bash
 set -o errexit -o errtrace -o nounset -o pipefail
 
-export SCRIPT_ROOT_DIR="${PWD}"
-source "${SCRIPT_ROOT_DIR}"/lib/common.sh
-
-if [[ -f "/etc/os-release" ]]; then
-  source "/etc/os-release"
-elif [[ -f "/usr/lib/os-release" ]]; then
-  source "/usr/lib/os-release"
-else
-  error "Can't find the os-release file."
-fi
+source lib/common.sh
+source /etc/os-release
 
 case "${NAME}" in
   "Ubuntu")
@@ -21,6 +13,9 @@ case "${NAME}" in
     log "openSUSE system detected."
     ./distro/opensuse.sh
     ;;
+  "Arch Linux")
+    log "Arch system detected."
+    ./distro/arch.sh
   *)
     error "Unknown system detected."
     ;;
