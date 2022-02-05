@@ -1,13 +1,5 @@
-# Terminal Setup
+# Goals
 
-This is a collection of my terminal configuration files.
-
-## Usage
-
-Run `install`.
-
-## Supported distributions
-
- - Ubuntu-based distributions.
- - OpenSUSE.
-
+ - Provide consistent programmer experience across various distributions.
+ - Should be reproducible, hard-coded configuration scripts.
+ - Use suckless alternatives if possible.
