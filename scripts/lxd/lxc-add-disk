@@ -1,4 +1,0 @@
-#!/bin/bash
-
-# Add shared disk to the given container instance of LXC.
-lxc config device add ${1} shared disk source=${2} path=${3:-/home/ubuntu/shared}
