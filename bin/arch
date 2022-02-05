@@ -1,0 +1,12 @@
+#!/bin/bash
+set -o errexit -o nounset -o errtrace -o pipefail
+
+sudo pacman -Syu --noconfirm
+sudo pacman -S \
+  ag \
+  fd \
+  bear \
+  tmux \
+  neovim \
+  tree \
+  the_silver_searcher \
