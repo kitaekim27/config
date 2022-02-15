@@ -12,3 +12,9 @@ nvim --headless -c ":PlugInstall" -c ":qa"
 install -D "${SCRIPT_ROOT_DIR}/neovim/plugin/coc_config.vim" \
   "${HOME}/.local/share/nvim/site/plugin/coc_config.vim"
 nvim --headless -c ":CocInstall coc-clangd coc-python coc-rls coc-sh" -c ":qa"
+
+echo '
+alias v="nvim"
+alias vi="nvim"
+alias vim="nvim"
+' >> ~/.bashrc
