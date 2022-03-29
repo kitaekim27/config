@@ -5,3 +5,5 @@ export EDITOR="nvim"
 export PATH="${HOME}/.local/bin:${PATH}"
 
 alias g="grep --recursive --line-number --color --initial-tab"
+alias sc="systemctl"
+alias jc="journalctl"
