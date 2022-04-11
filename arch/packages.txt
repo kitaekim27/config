@@ -8,6 +8,7 @@ bison
 bluez-hid2hci
 bluez-tools
 bluez-utils
+cmake
 discord
 docker
 dolphin-plugins
@@ -20,7 +21,6 @@ fcitx5-hangul
 fcitx5-qt
 fd
 flex
-fwupd
 fzf
 git
 go
@@ -86,10 +86,10 @@ rsync
 screenfetch
 sddm-kcm
 spectacle
+strace
 sudo
 telegram-desktop
 texinfo
-the_silver_searcher
 tmux
 tree
 ttf-anonymous-pro
