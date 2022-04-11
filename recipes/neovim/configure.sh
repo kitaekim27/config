@@ -14,6 +14,8 @@ install -D "${SCRIPT_ROOT_DIR}/neovim/plugin/coc_config.vim" \
 nvim --headless -c ":CocInstall coc-clangd coc-python coc-rls coc-sh" -c ":qa"
 
 echo '
+EDITOR="nvim"
+
 alias v="nvim"
 alias vi="nvim"
 alias vim="nvim"
