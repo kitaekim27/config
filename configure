@@ -1,0 +1,5 @@
+#!/bin/bash
+set -o errexit -o nounset -o errtrace -o pipefail
+
+readonly distro="${1}"
+"$distro/setup.sh"

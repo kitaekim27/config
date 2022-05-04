@@ -1,27 +1,28 @@
 #!/bin/bash
 set -o errexit -o nounset -o errtrace -o pipefail
 
-sudo apt-get update
-sudo apt-get upgrade -y
+sudo apt-get update && sudo apt-get upgrade -y
 
+# NOTE: Ubuntu is shipped with ibus-hangul but Kubuntu does not.
+# NOTE: Hope that nodejs is latest enough.
 sudo apt-get install -y \
-  python3 \
   build-essential \
-  bear \
   clangd \
   gdb \
+  bear \
+  tree \
   git \
   curl \
   wget \
-  net-tools \
-  silversearcher-ag \
-  fd-find \
   tmux \
   neovim \
+  nodejs \
+  ibus-hangul \
+  zsh \
   fzf
 
-curl -fsSL https://deb.nodesource.com/setup_lts.x | sudo -E bash -
-sudo apt-get install -y nodejs
+readonly RECIPES="zsh fzf neovim tmux tree"
 
-sudo apt-get install -y fcitx-hangul
-im-config -n fcitx # Set fcitx as a default input method.
+for recipe in $RECIPES; do
+  recipes/$recipe/configure.sh
+done

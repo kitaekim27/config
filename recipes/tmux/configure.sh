@@ -9,4 +9,4 @@ command -v tmux &> /dev/null \
   && [ -z "${SSH_TTY}" ] \
   && [ -z "${TMUX}" ] \
   && exec tmux
-' >> ~/.bashrc
+' >> ~/.zshrc

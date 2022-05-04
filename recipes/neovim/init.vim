@@ -160,21 +160,12 @@ autocmd Filetype xml setlocal
 	\ noexpandtab
 	\ smartindent
 
-autocmd BufRead,BufNewFile $WORKSPACE/linux/** setlocal
-	\ tabstop=8
-	\ softtabstop=8
-	\ shiftwidth=8
-	\ noexpandtab
-	\ cindent
-
-autocmd BufRead,BufNewFile $WORKSPACE/gnu/** setlocal
-	\ tabstop=2
-	\ softtabstop=2
-	\ shiftwidth=2
+autocmd Filetype md setlocal
+	\ tabstop=4
+	\ softtabstop=4
+	\ shiftwidth=4
 	\ expandtab
-	\ textwidth=79
-	\ cinoptions=>4,n-2,{2,^-2,:2,=2,g0,h2,p5,t0,+2,(0,u0,w1,m1
-	\ cindent
+	\ smartindent
 
 autocmd BufRead,BufNewFile $WORKSPACE/google/** setlocal
 	\ tabstop=2
@@ -190,3 +181,19 @@ autocmd BufRead,BufNewFile README.md setlocal
     \ expandtab
     \ autoindent
     \ textwidth=80
+
+autocmd BufRead,BufNewFile ~/Desktop/linux/** setlocal
+	\ tabstop=8
+	\ softtabstop=8
+	\ shiftwidth=8
+	\ noexpandtab
+	\ cindent
+
+autocmd BufRead,BufNewFile ~/Desktop/gnu/** setlocal
+	\ tabstop=2
+	\ softtabstop=2
+	\ shiftwidth=2
+	\ expandtab
+	\ textwidth=79
+	\ cinoptions=">4,n-2,{2,^-2,:2,=2,g0,h2,p5,t0,+2,(0,u0,w1,m1"
+	\ cindent
