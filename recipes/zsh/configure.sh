@@ -8,4 +8,4 @@ sudo chsh -s /usr/bin/zsh "${USER}" # Set the zsh as a default login shell.
 [ -d "${HOME}/.oh-my-zsh" ] && rm -rf "${HOME}/.oh-my-zsh"
 curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh | zsh
 
-install -v zshrc ~/.zshrc
+install -v $(dirname $0)/zshrc ~/.zshrc

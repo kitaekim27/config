@@ -1,7 +1,7 @@
 #!/bin/bash
 set -o errexit -o nounset -o errtrace -o pipefail
 
-install -v tmux.conf ~/.tmux.conf
+install -v $(dirname $0)/tmux.conf ~/.tmux.conf
 
 echo '
 command -v tmux &> /dev/null \
