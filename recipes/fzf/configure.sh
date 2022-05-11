@@ -1,12 +1,17 @@
 #!/bin/bash
 set -o errexit -o errtrace -o nounset -o pipefail
 
-echo '
 source /etc/os-release
-if [[ "${NAME}" = "Ubuntu" ]]; then
-  source /usr/share/doc/fzf/examples/completion.bash
-  source /usr/share/doc/fzf/examples/key-bindings.bash
+
+if [ "${NAME}" = "Ubuntu" ]; then
+  cat <<-EOF >> ~/.zshrc
+  source /usr/share/doc/fzf/examples/completion.zsh
+  source /usr/share/doc/fzf/examples/key-bindings.zsh
+EOF
 else
-  source /usr/share/fzf/completion.bash
-  source /usr/share/fzf/key-bindings.bash
-fi' >> ~/.zshrc
+  cat <<-EOF >> ~/.zshrc
+  source /usr/share/fzf/completion.zsh
+  source /usr/share/fzf/key-bindings.zsh
+EOF
+fi
+

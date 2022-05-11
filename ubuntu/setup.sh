@@ -19,9 +19,11 @@ sudo apt-get install -y \
   nodejs \
   ibus-hangul \
   zsh \
-  fzf
+  fzf \
+  silversearcher-ag \
+  fd-find
 
-readonly RECIPES="zsh fzf neovim tmux tree"
+readonly RECIPES="zsh tmux fzf ag fd tree"
 
 for recipe in $RECIPES; do
   recipes/$recipe/configure.sh

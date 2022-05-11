@@ -12,10 +12,12 @@ nvim --headless -c ":PlugInstall" -c ":qa"
 install -D $(dirname $0)/coc_config.vim "${HOME}/.local/share/nvim/site/plugin/coc_config.vim"
 nvim --headless -c ":CocInstall coc-clangd coc-python coc-rls coc-sh" -c ":qa"
 
-echo '
+cat << EOF >> ~/.zshrc
 EDITOR="nvim"
 
 alias v="nvim"
 alias vi="nvim"
 alias vim="nvim"
-' >> ~/.zshrc
+
+EOF
+
