@@ -8,3 +8,9 @@ alias rg="grep --recursive --line-number --color"
 alias g="grep --line-number --color"
 alias sc="systemctl"
 alias jc="journalctl"
+
+export ZSH="$HOME/.oh-my-zsh"
+ZSH_THEME="candy"
+plugins=(git)
+source $ZSH/oh-my-zsh.sh
+

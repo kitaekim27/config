@@ -23,7 +23,7 @@ sudo apt-get install -y \
   silversearcher-ag \
   fd-find
 
-readonly RECIPES="zsh tmux fzf ag fd tree"
+readonly RECIPES="zsh tmux fzf neovim ag fd tree"
 
 for recipe in $RECIPES; do
   recipes/$recipe/configure.sh
