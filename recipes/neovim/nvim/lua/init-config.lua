@@ -31,6 +31,9 @@ map('', '<M-j>', ':TmuxNavigateDown<CR>', { silent = true })
 map('', '<M-k>', ':TmuxNavigateUp<CR>', { silent = true })
 map('', '<M-l>', ':TmuxNavigateRight<CR>', { silent = true })
 
+vim.cmd('inoremap <expr> <C-j> pumvisible() ? "<C-n>" : "<C-x><C-o>"')
+vim.cmd('inoremap <expr> <C-k> pumvisible() ? "<C-p>" : "<C-x><C-o>"')
+
 vim.go.clipboard = 'unnamed,unnamedplus'
 vim.go.ignorecase = true
 vim.go.incsearch = true
