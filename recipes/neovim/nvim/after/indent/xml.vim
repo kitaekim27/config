@@ -1,6 +1,5 @@
-tabstop=2
-softtabstop=2
-shiftwidth=2
-noexpandtab
-smartindent
-
+set tabstop=2
+set softtabstop=2
+set shiftwidth=2
+set noexpandtab
+set smartindent
