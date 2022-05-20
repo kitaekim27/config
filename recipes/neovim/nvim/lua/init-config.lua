@@ -1,5 +1,7 @@
 vim.g.mapleader = ' '
 vim.cmd('filetype plugin indent on')
+vim.cmd('highlight Pmenu ctermfg=NONE ctermbg=NONE cterm=NONE')
+vim.cmd('highlight PmenuSel ctermfg=NONE ctermbg=NONE cterm=NONE')
 
 local map = vim.api.nvim_set_keymap
 
