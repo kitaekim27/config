@@ -33,9 +33,6 @@ map('', '<M-j>', ':TmuxNavigateDown<CR>', { silent = true })
 map('', '<M-k>', ':TmuxNavigateUp<CR>', { silent = true })
 map('', '<M-l>', ':TmuxNavigateRight<CR>', { silent = true })
 
-map('', '<C-o>', ':bprevious<CR>', { silent = true })
-map('', '<C-i>', ':bnext<CR>', { silent = true })
-
 vim.cmd('inoremap <expr> <C-j> pumvisible() ? "<C-n>" : "<C-x><C-o>"')
 vim.cmd('inoremap <expr> <C-k> pumvisible() ? "<C-p>" : "<C-x><C-o>"')
 
