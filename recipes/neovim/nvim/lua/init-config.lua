@@ -45,9 +45,11 @@ vim.go.shiftround = true
 vim.go.smartcase = true
 vim.go.termguicolors = true
 vim.go.undodir = '/tmp'
+vim.go.updatetime = 400
 vim.go.wrapscan = false
 
 vim.wo.cursorline = true
+vim.wo.signcolumn = 'number'
 vim.wo.wrap = false
 
 vim.bo.expandtab = true
