@@ -49,7 +49,6 @@ vim.go.updatetime = 400
 vim.go.wrapscan = false
 
 vim.wo.cursorline = true
-vim.wo.signcolumn = 'number'
 vim.wo.wrap = false
 
 vim.bo.expandtab = true
