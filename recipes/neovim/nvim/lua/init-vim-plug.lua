@@ -6,5 +6,6 @@ vim.cmd([[
     Plug 'junegunn/fzf.vim'
     Plug 'neovim/nvim-lspconfig'
     Plug 'tpope/vim-surround'
+    Plug 'windwp/nvim-autopairs'
     call plug#end()
 ]])
