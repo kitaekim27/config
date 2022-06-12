@@ -1,0 +1,9 @@
+[Unit]
+After=remote-fs.target
+
+[Automount]
+Where=/mnt/rclone
+TimeoutIdleSec=600
+
+[Install]
+WantedBy=remote-fs.target

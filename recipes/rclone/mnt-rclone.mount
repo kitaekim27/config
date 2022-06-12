@@ -1,0 +1,8 @@
+[Unit]
+After=remote-fs.target
+
+[Mount]
+Type=rclone
+What=gcloud:
+Where=/mnt/rclone
+Options=rw,allow_other,args2env,vfs-cache-mode=writes,config=/etc/rclone.conf,cache-dir=/var/rclone
