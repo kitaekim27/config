@@ -12,6 +12,7 @@ sudo apt-get install -y \
   git \
   curl \
   wget \
+  tmux \
   neovim \
   ibus-hangul \
   zsh \
@@ -19,7 +20,7 @@ sudo apt-get install -y \
   silversearcher-ag \
   fd-find
 
-readonly RECIPES="zsh fzf neovim ag fd tree"
+readonly RECIPES="zsh tmux fzf neovim ag fd tree"
 
 for recipe in $RECIPES; do
   recipes/$recipe/configure.sh
