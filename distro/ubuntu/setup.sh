@@ -20,6 +20,7 @@ sudo apt-get install -y \
   silversearcher-ag \
   fd-find
 
+# Note that there's order dependency between scripts.
 readonly RECIPES="zsh tmux fzf neovim ag fd tree"
 
 for recipe in "$RECIPES"; do
