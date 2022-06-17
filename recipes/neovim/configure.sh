@@ -13,8 +13,8 @@ nvim --headless -c "PlugInstall" -c "qa"
 
 # Now, append plugin-specific directives into our init.lua.
 cat << EOF >> ~/.config/nvim/init.lua
-require('init-nvim-lspconfig')
 require('init-autopairs')
+require('init-coc')
 
 EOF
 
