@@ -22,7 +22,6 @@ sudo apt-get install -y \
 
 readonly RECIPES="zsh tmux fzf neovim ag fd tree"
 
-for recipe in $RECIPES; do
-  recipes/$recipe/configure.sh
+for recipe in "$RECIPES"; do
+  "recipes/$recipe/configure.sh"
 done
-

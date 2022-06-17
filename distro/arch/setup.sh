@@ -17,6 +17,6 @@ sudo pacman -Su --noconfirm
 sudo pacman -S --noconfirm \
   $(cat packages.txt)
 
-for recipe in ${RECIPES}; do
+for recipe in "${RECIPES}"; do
   "recipes/${recipe}/configure.sh"
 done
