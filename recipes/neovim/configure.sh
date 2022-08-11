@@ -17,7 +17,7 @@ require('init-autopairs')
 require('init-coc')
 EOF
 
-cat <<EOF >>~/.zshrc
+cat <<EOF >>"${HOME}/.bashrc"
 EDITOR="nvim"
 alias v="nvim"
 alias vi="nvim"
