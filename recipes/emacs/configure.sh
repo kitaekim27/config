@@ -7,7 +7,7 @@ systemctl --user enable emacs # Launch emacs daemon automatically.
 [ -d "${HOME}/.emacs.d" ] && rm -rf "${HOME}/.emacs.d"
 git clone -q --depth=1 "https://github.com/syl20bnr/spacemacs ${HOME}/.emacs.d"
 
-cat << EOF >> ~/.zshrc
+cat <<EOF >>~/.zshrc
 export EDITOR="emacsclient -tc"
 alias emacs="emacsclient -tc"
 alias e="emacsclient -tc"

@@ -8,4 +8,4 @@ git clone --depth=1 https://github.com/Bash-it/bash-it.git ~/.bash_it
 sed -i "s/BASH_IT_THEME='*'/BASH_IT_THEME='easy'/p" ~/.bashrc
 
 # Copy general configuration.
-cat bashrc >> ~/.bashrc
+cat bashrc >>~/.bashrc
